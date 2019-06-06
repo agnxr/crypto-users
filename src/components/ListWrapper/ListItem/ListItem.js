@@ -13,7 +13,7 @@ const defaultDesc = 'This iconic fragrance has stood the test of time, becoming 
 
 return (
     <li className={styles.wrapper}>
-        <div>
+        <div className={styles.item}>
             <h2>{nickname}</h2>
             <h3>{email}</h3>
             <p>{ip}</p>

@@ -33,7 +33,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Perfume Encyclopedia
+            User List
           </p>
         </header>
         <Form submitFn={this.addItem} />
