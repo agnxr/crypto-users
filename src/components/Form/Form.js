@@ -3,8 +3,15 @@ import styles from './Form.module.scss';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
 
-const Form = ({submitFn}) => (
-        <form onSubmit={submitFn} autoComplete="off">
+class Form extends React.Component {
+
+    state = {
+
+    }
+    
+    render(){
+        return (
+            <form onSubmit={this.props.submitFn} autoComplete="off">
             <Input 
             name="nickname"
             label="Nickname"
@@ -24,7 +31,8 @@ const Form = ({submitFn}) => (
             />
             <Button>add new item</Button>
         </form>
-
-);
+        );
+    }
+} 
 
 export default Form;

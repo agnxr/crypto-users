@@ -4,11 +4,15 @@ import './App.css';
 import users from '../src/data/data.json';
 import ListWrapper from './components/ListWrapper/ListWrapper';
 import Form from './components/Form/Form';
+import Modal from './components/Modal/Modal';
+import UserForm from './components/UserForm/UserForm';
+
 
 class App extends React.Component {
 
   state = {
-    items: [...users]
+    items: [...users],
+    isModalOpern: false,
   }
 
   addItem = (e) => {
@@ -24,23 +28,47 @@ class App extends React.Component {
       items: [newItem, ...prevState.items],
     }));
 
-    e.target.reset();
+    //e.target.reset();
+    //e.target[0].value = "elo";
 
+ 
+  }
+
+  
+
+  openModal = () => {
+    this.setState({
+      isModalOpen: true,
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false,
+    })
   }
 
   render(){
+
+    const  { isModalOpen } = this.state;
+
     return (
       <div className="App">
+      <button onClick={this.openModal}>Otworz modal</button>
         <header className="App-header">
           <p>
             User List
           </p>
+          <UserForm submitFn={this.addItem}/>
         </header>
         <Form submitFn={this.addItem} />
         <section>
           <ListWrapper 
             items={this.state.items}
           />
+        </section>
+        <section>
+          { isModalOpen && <Modal closeModalFn={this.closeModal} /> }
         </section>
       </div>
     );
