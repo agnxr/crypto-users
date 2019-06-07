@@ -59,6 +59,8 @@ class UserForm extends React.Component {
       case "userName":
       
           value.length < 3 ? formErrors.userName = "minimum 3 characaters required" : formErrors.userName = "" ||
+
+          value.length > 12 ? formErrors.userName = "max 15 znakow!!!" : formErrors.userName = "" ||
           //value === 'cat' ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
           //users.filter(user => user.nickname == value) ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
          // value === 'cat' ? "minimum 3 characaters required" : "";
@@ -85,9 +87,9 @@ users.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0  
 
       case "email":
  
-
-          emailRegex.test(value) ? formErrors.email = "" : formErrors.email = "invalid email address" ||
-          value === "cat@gmail.com" ? formErrors.email = "mail zajety" : formErrors.email = "";
+          users.filter(x => x.email.toLowerCase() === value.toLowerCase()).length > 0 ? formErrors.email = "mail zajety" : formErrors.email = "" ||
+          emailRegex.test(value) ? formErrors.email = "" : formErrors.email = "invalid email address";
+          //value == "cat@gmail.com" ? formErrors.email = "mail zajety" : formErrors.email = "";
          // users.filter(x => x.email.toLowerCase() === value.toLowerCase()).length > 0  ? formErrors.email = "" : formErrors.email = "uztkownik o takim mailu juz jest";
 
         break;
