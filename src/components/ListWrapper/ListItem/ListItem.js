@@ -18,6 +18,7 @@ return (
             <h3>{email}</h3>
             <p>{ip}</p>
         </div>
+                <button>Remove</button>
     </li>
 )
 }

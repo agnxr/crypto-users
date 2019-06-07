@@ -34,7 +34,32 @@ class App extends React.Component {
  
   }
 
+
+    // done.sort((a, b) => b.finishDate - a.finishDate)
+/*
+    if (done.length >= 2) {
+      done.sort((a, b) => {
+        if (a.finishDate < b.finishDate) {
+          return 1
+        }
+        if (a.finishDate > b.finishDate) {
+          return -1
+        }
+        return 0
+      })
+    }
+    if (active.length >= 2) {
+      active.sort((a, b) => {
   
+        a = a.text.toLowerCase();
+        b = b.text.toLowerCase();
+  
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0
+      })
+    }
+  */
 
   openModal = () => {
     this.setState({
@@ -47,6 +72,16 @@ class App extends React.Component {
       isModalOpen: false,
     })
   }
+
+
+sortByName = (event) => {
+  const users = this.state.items;
+  let newUsers = users.reverse()
+  this.setState({
+    users: newUsers.sort((a,b) => a.date > b.date)
+  })
+}
+
 
   render(){
 
@@ -62,6 +97,13 @@ class App extends React.Component {
           <UserForm submitFn={this.addItem}/>
         </header>
         <Form submitFn={this.addItem} />
+        <section>
+          <h1>Sort user list by:</h1>
+          <button onClick={this.sortByName}>nickname</button>
+          <button>email</button>
+          <button>date</button>
+
+        </section>
         <section>
           <ListWrapper 
             items={this.state.items}

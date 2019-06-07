@@ -13,6 +13,11 @@
     "nickname": "Wolf",
     "email": "wolf@gmail.com",
     "ip": "127.255.255"
+  },
+  {
+    "nickname": "Cat2",
+    "email": "cat@gmail.com",
+    "ip": "127.255.255"
   }
 
 ]
