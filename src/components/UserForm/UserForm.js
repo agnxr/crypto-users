@@ -9,6 +9,11 @@ const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
 
+const ipRegex = RegExp(
+  /^(?=.*[^\.]$)((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.?){4}$/
+);
+
+
 const formValid = ({ formErrors, ...rest }) => {
   let valid = true;
 
@@ -31,20 +36,16 @@ class UserForm extends React.Component {
 
     this.state = {
       userName: null,
-      lastName: null,
+      ip: null,
       email: null,
       formErrors: {
         userName: "",
-        lastName: "",
+        ip: "",
         email: ""
       }
     };
   }
 
-
-  getFilteredByNickname(text) {
-    return users.filter(x => x.nickname.toLowerCase().includes(text.toLowerCase()))
-  }
 
 
   handleChange = e => {
@@ -54,8 +55,6 @@ class UserForm extends React.Component {
 
 
  
-
-
     switch (name) {
       case "userName":
       
@@ -73,14 +72,24 @@ class UserForm extends React.Component {
 users.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0  ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
        //console.log(users.filter(x => x.nickname.toLowerCase().includes(value.toLowerCase())));
         break;
-      case "lastName":
-        formErrors.lastName =
+      case "ip":
+        /*
+        formErrors.ip =
           value.length < 3 ? "minimum 3 characaters required" : "";
+        break; */
+
+        formErrors.ip = ipRegex.test(value)
+        ? ""
+        : "invalid IP adress";
         break;
+
       case "email":
-        formErrors.email = emailRegex.test(value)
-          ? ""
-          : "invalid email address";
+ 
+
+          emailRegex.test(value) ? formErrors.email = "" : formErrors.email = "invalid email address" ||
+          value === "cat@gmail.com" ? formErrors.email = "mail zajety" : formErrors.email = "";
+         // users.filter(x => x.email.toLowerCase() === value.toLowerCase()).length > 0  ? formErrors.email = "" : formErrors.email = "uztkownik o takim mailu juz jest";
+
         break;
       default:
         break;
@@ -112,18 +121,18 @@ users.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0  
                 <span className="errorMessage">{formErrors.userName}</span>
               )}
             </div>
-            <div className="lastName">
-              <label htmlFor="lastName">Last Name</label>
+            <div className="ip">
+              <label htmlFor="ip">IP adress</label>
               <input
-                className={formErrors.lastName.length > 0 ? "error" : null}
-                placeholder="Last Name"
+                className={formErrors.ip.length > 0 ? "error" : null}
+                placeholder="IP adress"
                 type="text"
-                name="lastName"
+                name="ip"
                 noValidate
                 onChange={this.handleChange}
               />
-              {formErrors.lastName.length > 0 && (
-                <span className="errorMessage">{formErrors.lastName}</span>
+              {formErrors.ip.length > 0 && (
+                <span className="errorMessage">{formErrors.ip}</span>
               )}
             </div>
             <div className="email">
@@ -143,8 +152,8 @@ users.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0  
 
             <div className="createAccount">
               <button type="submit" disabled={ 
-                this.state.formErrors.email.length > 0 || this.state.formErrors.userName.length > 0 || this.state.formErrors.lastName.length > 0 ||
-                !this.state.userName || !this.state.lastName || !this.state.email} > Create Account </button>
+                this.state.formErrors.email.length > 0 || this.state.formErrors.userName.length > 0 || this.state.formErrors.ip.length > 0 ||
+                !this.state.userName || !this.state.ip || !this.state.email} > Create Account </button>
             </div>
           </form>
         </div>
