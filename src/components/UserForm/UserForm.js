@@ -70,7 +70,7 @@ class UserForm extends React.Component {
 
        // users.filter(x => x.nickname.toLowerCase().includes(value.toLowerCase())).length > 1 ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
   
-users.filter(x => x.nickname.toLowerCase().includes(value.toLowerCase())).length > 0  ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
+users.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0  ? formErrors.userName = "taki user juz jest" : formErrors.userName = "";
        //console.log(users.filter(x => x.nickname.toLowerCase().includes(value.toLowerCase())));
         break;
       case "lastName":
