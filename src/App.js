@@ -167,8 +167,14 @@ class App extends React.Component {
             items={this.state.items}
             delete={this.deleteUser}
           />
-          <div>
-            {this.state.items.length > 0 && <button onClick={this.openModal}>Delete all users</button>} 
+          <div className={styles.delete}>
+            {this.state.items.length > 0 && 
+              <button 
+                onClick={this.openModal}
+                className={styles.removeAllBtn}
+              >
+                Delete all users
+              </button>} 
           </div>
         </section>
         <section>

@@ -76,7 +76,7 @@ class Form extends React.Component {
                   onChange={this.handleChange}
                 />
                 <div className={formErrors.userName.length > 0 ? styles.tooltip : null}>
-                    <span className={styles.tooltiptext}>{this.props.msgNick}</span>
+                    <span className={this.props.msgNick !== '' ? styles.emptyFieldMsg : null}>{this.props.msgNick}</span>
                     {formErrors.userName.length > 0 && (
                       <span className={styles.tooltiptext}>{formErrors.userName}</span>
                     )}

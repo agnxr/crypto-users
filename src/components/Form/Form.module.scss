@@ -16,7 +16,7 @@
 
     .inputField {
       display: flex;
-      margin-right: -20px;
+      margin-right: -50px;
 
       .input {
         color: #273f6e;
@@ -105,5 +105,29 @@
     &:disabled {
       background: #dddddd;
       cursor: auto;
+    }
+  }
+
+  .emptyFieldMsg {
+    width: 220px;
+    height: 55px;
+    background-color: #fcebf1;
+    color: #e65386;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #fcebf1 transparent transparent;
     }
   }

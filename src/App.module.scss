@@ -19,3 +19,38 @@ body {
     transition: 0.5s;
     background-color: #edf5ff;
 }
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+
+    .removeAllBtn {
+        margin-top: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        background-color: #fcebf1;
+        color: #e65386;  
+        border: none;
+        padding: 20px;
+        border-radius: 30px;
+
+        &:hover {
+        background-color: darken(#f6faff, 80%);
+        color: #fff;
+        transition: 0.3s;
+        }
+    }
+}   
+
+
+@media (max-width: 575.98px) { 
+    body {
+        margin: 30px;
+    }
+    .delete {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
