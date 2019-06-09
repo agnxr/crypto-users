@@ -86,6 +86,7 @@
   background-color: #f6faff;
   border: none;
   padding: 20px;
+  font-family: 'Open Sans', sans-serif;
     &:hover {
       background-color: darken(#f6faff, 80%);
       color: #fff;
@@ -97,4 +98,5 @@
   @extend .confirm;
     background-color: #fcebf1;
     color: #e65386;  
+    font-family: 'Open Sans', sans-serif;
 }
