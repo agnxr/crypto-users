@@ -76,20 +76,20 @@ class App extends React.Component {
 
     else if (e.target[1].value.length < 1){
       this.setState({
-        messageMail: 'This field is required'
+        messageMail: 'This field is required.'
       })
     }
 
     else if(e.target[2].value.length < 1) {
       this.setState({
-        messageIP: 'This field is required'
+        messageIP: 'This field is required.'
       })
     }
 
     else {
       e.target[0].value !== '' && e.target[1].value !== '' && e.target[2].value !== '' && this.setState(prevState => ({
         items: [newItem, ...prevState.items],
-        message: 'The new user has been added successfully',
+        message: 'The new user has been added successfully.',
       }));
         
       e.target.reset();
@@ -114,7 +114,7 @@ class App extends React.Component {
 
     this.setState({
       items: allUsers,
-      message: `User ${nickname} has been successfully removed`,
+      message: `User ${nickname} has been successfully removed.`,
     })
   }
 
@@ -161,7 +161,7 @@ class App extends React.Component {
         />
         <section>
           <div>
-            {this.state.message && <h3>{this.state.message}</h3>}
+            {this.state.message && <h3 className={styles.info}>{this.state.message}</h3>}
           </div>
           <ListWrapper 
             items={this.state.items}

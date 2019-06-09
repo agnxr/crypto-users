@@ -11,7 +11,7 @@ const ListWrapper = (props) => (
                 <th className={styles.title}>Nickname</th>
                 <th className={styles.title}>Email</th>
                 <th className={styles.title}>IP address</th>
-                <th className={styles.title}>date</th>
+                <th className={styles.title}>Date</th>
                 <th></th>
             </tr>
             { 

@@ -36,7 +36,7 @@ render() {
             }
           </td>
           <td className={styles.data}>
-            <button onClick={this.openPopup} className={styles.removeBtn}></button>
+            <button onClick={this.openPopup} className={styles.removeBtn} />
           </td>
             { isPopupOpen && <Popup deleteUserFn={this.props.deleteUserFn} nick={this.props.nickname} closePopupFn={this.closePopup}/> }
         </tr>        
