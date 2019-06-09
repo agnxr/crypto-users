@@ -97,7 +97,7 @@ class Form extends React.Component {
                   onChange={this.handleChange}
                 />
                 <div className={formErrors.email.length > 0 ? styles.tooltip : null}>
-                    <span className={styles.tooltiptext}>{this.props.msgMail}</span>
+                    <span className={this.props.msgMail !== '' ? styles.emptyFieldMsg : null}>{this.props.msgMail}</span>
                     {formErrors.email.length > 0 && (
                       <span className={styles.tooltiptext}>{formErrors.email}</span>
                     )}
@@ -118,7 +118,7 @@ class Form extends React.Component {
                   onChange={this.handleChange}
                 />
                 <div className={formErrors.ip.length > 0 ? styles.tooltip : null}>
-                    <span className={styles.tooltiptext}>{this.props.msgIP}</span>
+                    <span className={this.props.msgIP !== '' ? styles.emptyFieldMsg : null}>{this.props.msgIP}</span>
                     {formErrors.ip.length > 0 && (
                       <span className={styles.tooltiptext}>{formErrors.ip}</span>
                     )}
