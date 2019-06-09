@@ -1,5 +1,4 @@
 .wrapper {
-    padding: 70px 80px 0;
     top: 50%;
     transform: translateY(-50%);
     left: 0;
@@ -44,7 +43,7 @@
     box-sizing: border-box;
     line-height: $size;
     display: inline-block;
-    background-color: #f6faff;
+    background-color: transparent;
     border: none;
     top: -17%;
     left: 60%;
