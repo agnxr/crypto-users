@@ -7,27 +7,18 @@
     margin: 0 auto;
     width: 60vw;
     height: 70vh;
-    background-color: white;
-    box-shadow: 0 20px 40px -5px rgba(#1e58ff, .3);
     position: fixed;
-    z-index: 1; /* Sit on top */
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
+    z-index: 1; 
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0);
     background-color: transparent;
-    background-color: black;
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-
-    
-    color: #fff;
-
-
+    background-color: rgba(0,0,0,0.4); 
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
 
   .popup {
     width: 60%;
@@ -38,7 +29,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
     color: #203869;
       .userName{
         font-weight: bold;
@@ -58,27 +48,25 @@
     border: none;
     top: -17%;
     left: 60%;
-  
-
     cursor: pointer;
     outline: none;
 
     &:before, &:after {
-        $width: 20px;
-        $height: 4px;
-        transform: rotate(-45deg);
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -$height/2;
-        margin-left: -$width/2;
-        display: block;
-        height: $height;
-        width: $width;
-        background-color: #8d9fc5;
-        transition: all 0.25s ease-out;
-        border-radius: 25px;
+      $width: 20px;
+      $height: 4px;
+      transform: rotate(-45deg);
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -$height/2;
+      margin-left: -$width/2;
+      display: block;
+      height: $height;
+      width: $width;
+      background-color: #8d9fc5;
+      transition: all 0.25s ease-out;
+      border-radius: 25px;
     }
 
     &:after {
@@ -104,12 +92,10 @@
       color: #fff;
       transition: 0.3s;
     }
-
-}
+  }
 
 .cancel {
   @extend .confirm;
     background-color: #fcebf1;
-    color: #e65386;
-  
+    color: #e65386;  
 }
