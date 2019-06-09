@@ -1,4 +1,4 @@
-/*@keyframes appear {
+@keyframes appear {
     0% {
         opacity: 0;
         top: 35px;
@@ -9,37 +9,62 @@
     }
 }
 
-.wrapper {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    text-align: left;
-    border: 1px solid blue;
-    max-width: 300px;
-    margin-bottom: 20px;
-    position: relative;
-    animation: appear .5s ease;
-
-
-}
-
-.item {
-    display: grid;
-    //grid-template-columns: (3, 1fr);
-    grid-template-columns: 300px 300px 300px;
-    //grid-template-columns: 1fr 1fr 1fr;
-
-justify-content: center;
-}
-
-*/
 
 .row {
     width: 100%;
-    border: 1px solid red;
+    border-bottom: 1px solid #edf5ff;
+    animation: appear .5s ease;
+    &:last-child {
+        border: none;
+    }
     .data {
-        border: 1px solid red;
+       // border: 1px solid red;
+        color: #203869;
+        padding-left: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+
+.removeBtn {
+    $size: 50px;
+    height: $size;
+    width: $size;
+    position: relative;
+    box-sizing: border-box;
+    line-height: $size;
+    display: inline-block;
+    background-color: #f6faff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &:before, &:after {
+        $width: 20px;
+        $height: 4px;
+        transform: rotate(-45deg);
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -$height/2;
+        margin-left: -$width/2;
+        display: block;
+        height: $height;
+        width: $width;
+        background-color: #8d9fc5;
+        transition: all 0.25s ease-out;
+        border-radius: 25px;
+    }
+
+    &:after {
+        transform: rotate(-135deg);
+    }
+
+    &:hover {
+        &:before, &:after {
+            transform: rotate(0deg);
+        }
     }
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
 import PropTypes from 'prop-types';
-import ListWrapper from '../ListWrapper';
 import Popup from './Popup/Popup';
 
 
@@ -11,28 +10,16 @@ state = {
 }
 
 openPopup = () => {
-    this.setState({
-      isPopupOpen: true,
-    })
-  }
-
-  closePopup = () => {
-    this.setState({
-      isPopupOpen: false,
-    })
-  }
-
-elo = (e) => {
-  if (e.target === this.refs.outsideOfModal){
-    this.setState({
-        isPopupOpen: false,
-    });
-  }
+  this.setState({
+    isPopupOpen: true,
+  })
 }
 
-
-
-
+closePopup = () => {
+  this.setState({
+    isPopupOpen: false,
+  })
+}
 
 
 render() {
@@ -48,7 +35,7 @@ render() {
             <td className={styles.data}>
        
                 {/*<button onClick={() => this.props.deleteUserFn(this.props.nickname)}>Remove</button>*/}
-                <button onClick={this.openPopup}>Remove</button>
+                <button onClick={this.openPopup} className={styles.removeBtn}></button>
                 </td>
                 
                 { isPopupOpen && <Popup deleteUserFn={this.props.deleteUserFn} nick={this.props.nickname} closePopupFn={this.closePopup}/> }
