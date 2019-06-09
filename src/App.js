@@ -1,10 +1,10 @@
 import React from 'react';
-import './App.css';
+import styles from './App.module.scss';
 import users from '../src/data/data.json';
 import ListWrapper from './components/ListWrapper/ListWrapper';
 import Form from './components/Form/Form';
 import Modal from './components/Modal/Modal';
-import styles from './App.module.scss';
+import Sort from './components/Sort/Sort';
 
 
 class App extends React.Component {
@@ -154,6 +154,11 @@ class App extends React.Component {
             msgIP={messageIP}
           />
         </section>
+        <Sort 
+          sortByNameFn={this.sortByName}
+          sortByEmailFn={this.sortByEmail}
+          sortByDateFn={this.sortByDate}
+        />
         <section>
           <h2>Sort by:</h2>
             <button onClick={this.sortByName}>nickname</button>
