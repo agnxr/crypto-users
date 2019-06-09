@@ -45,18 +45,12 @@ render() {
             <p>{this.props.ip}</p>
             <p>data dodania: {new Date(this.props.date).toLocaleString("pl-PL", { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})}</p>
         </div>
-<<<<<<< HEAD
                 {/*<button onClick={() => this.props.deleteUserFn(this.props.nickname)}>Remove</button>*/}
                 <button onClick={this.openPopup}>Remove</button>
                 
                 { isPopupOpen && <Popup deleteUserFn={this.props.deleteUserFn} nick={this.props.nickname} closePopupFn={this.closePopup}/> }
     </li>        
     )
-=======
-                <button>Remove</button>
-    </li>
-)
->>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
 }
 }
 

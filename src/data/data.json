@@ -14,7 +14,6 @@
   {
     "nickname": "Wolf",
     "email": "wolf@gmail.com",
-<<<<<<< HEAD
     "ip": "127.255.255",
     "date": 1559931972489
   },
@@ -23,14 +22,6 @@
     "email": "aacat@gmail.com",
     "ip": "127.255.255",
     "date": "54"
-=======
-    "ip": "127.255.255"
-  },
-  {
-    "nickname": "Cat2",
-    "email": "cat@gmail.com",
-    "ip": "127.255.255"
->>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
   }
 
 ]
