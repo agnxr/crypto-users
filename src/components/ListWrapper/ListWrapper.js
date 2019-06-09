@@ -4,9 +4,17 @@ import styles from './ListWrapper.module.scss';
 
 
 const ListWrapper = (props) => (
-    <>
+    <div className={styles.wrapper}>
         {props.items.length ? (
-        <ul className={styles.wrapper}>
+        <table className={styles.table}>
+          <tr className={styles.header}>
+    <th className={styles.title}>Nickname</th>
+    <th className={styles.title}>Email</th>
+    <th className={styles.title}>IP address</th>
+    <th className={styles.title}>date</th>
+    <th></th>
+  </tr>
+
             {
                 props.items.map(item => (
                 <ListItem 
@@ -16,11 +24,12 @@ const ListWrapper = (props) => (
                 />
                 )) 
             }
-        </ul>
+            
+        </table>
         ) : (
             <h1>The list is empty</h1>
         )}
-    </>
+    </div>
 );
 
 export default ListWrapper;

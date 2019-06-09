@@ -38,18 +38,22 @@ elo = (e) => {
 render() {
     const  { isPopupOpen } = this.state;
     return (
-        <li className={styles.wrapper}>
-        <div className={styles.item}>
-            <h2>{this.props.nickname}</h2>
-            <h3>{this.props.email}</h3>
-            <p>{this.props.ip}</p>
-            <p>data dodania: {new Date(this.props.date).toLocaleString("pl-PL", { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})}</p>
-        </div>
+        <tr className={styles.row}>
+
+            <td className={styles.data}>{this.props.nickname}</td>
+            <td className={styles.data}>{this.props.email}</td>
+            <td className={styles.data}>{this.props.ip}</td>
+            <td className={styles.data}>{new Date(this.props.date).toLocaleString("pl-PL", { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})}
+            </td>
+            <td className={styles.data}>
+       
                 {/*<button onClick={() => this.props.deleteUserFn(this.props.nickname)}>Remove</button>*/}
                 <button onClick={this.openPopup}>Remove</button>
+                </td>
                 
                 { isPopupOpen && <Popup deleteUserFn={this.props.deleteUserFn} nick={this.props.nickname} closePopupFn={this.closePopup}/> }
-    </li>        
+
+    </tr>        
     )
 }
 }

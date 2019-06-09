@@ -160,12 +160,6 @@ class App extends React.Component {
           sortByDateFn={this.sortByDate}
         />
         <section>
-          <h2>Sort by:</h2>
-            <button onClick={this.sortByName}>nickname</button>
-            <button onClick={this.sortByEmail}>e-mail</button>
-            <button onClick={this.sortByDate}>date</button>
-        </section>
-        <section>
           <div>
             {this.state.message && <h3>{this.state.message}</h3>}
           </div>

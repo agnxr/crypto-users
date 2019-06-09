@@ -107,11 +107,11 @@ class Form extends React.Component {
             </div>
 
             <div className={styles.formItem}>
-              <label htmlFor="ip" className={styles.label}>IP adress</label>
+              <label htmlFor="ip" className={styles.label}>IP address</label>
               <div className={styles.inputField}>
                 <input
                   className={styles.input}
-                  placeholder="Enter IP adress"
+                  placeholder="Enter IP address"
                   type="text"
                   name="ip"
                   noValidate

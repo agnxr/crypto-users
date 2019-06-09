@@ -1,4 +1,4 @@
-@keyframes appear {
+/*@keyframes appear {
     0% {
         opacity: 0;
         top: 35px;
@@ -34,3 +34,12 @@
 justify-content: center;
 }
 
+*/
+
+.row {
+    width: 100%;
+    border: 1px solid red;
+    .data {
+        border: 1px solid red;
+    }
+}
