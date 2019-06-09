@@ -2,6 +2,8 @@
 
 A simple React app that adds or remove users from the list.
 
+Demo: https://agnxr.github.io/user-list/
+
 1. Users should provide an email, nickname and IP address
 2. Email and IP address validation
 3. A button is disabled if validation does not pass
