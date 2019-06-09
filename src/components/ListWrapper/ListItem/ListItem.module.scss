@@ -18,7 +18,6 @@
         border: none;
     }
     .data {
-       // border: 1px solid red;
         color: #203869;
         padding-left: 20px;
         padding-top: 30px;
@@ -39,6 +38,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+    outline: none;
 
     &:before, &:after {
         $width: 20px;

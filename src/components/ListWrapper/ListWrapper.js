@@ -7,27 +7,26 @@ const ListWrapper = (props) => (
     <div className={styles.wrapper}>
         {props.items.length ? (
         <table className={styles.table}>
-          <tr className={styles.header}>
-    <th className={styles.title}>Nickname</th>
-    <th className={styles.title}>Email</th>
-    <th className={styles.title}>IP address</th>
-    <th className={styles.title}>date</th>
-    <th></th>
-  </tr>
-
-            {
+            <tr className={styles.header}>
+                <th className={styles.title}>Nickname</th>
+                <th className={styles.title}>Email</th>
+                <th className={styles.title}>IP address</th>
+                <th className={styles.title}>date</th>
+                <th></th>
+            </tr>
+            { 
                 props.items.map(item => (
-                <ListItem 
-                    deleteUserFn={props.delete} 
-                    key={item.nickname} 
-                    {...item} 
-                />
+
+                    <ListItem 
+                        deleteUserFn={props.delete} 
+                        key={item.nickname} 
+                        {...item} 
+                    />
                 )) 
             }
-            
         </table>
         ) : (
-            <h1>The list is empty</h1>
+            <h2 className={styles.info}>The list is empty</h2>
         )}
     </div>
 );
