@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 
 const emailRegex = RegExp(
@@ -153,4 +154,43 @@ usersy.filter(x => x.nickname.toLowerCase() === value.toLowerCase()).length > 0 
   }
 }
 
+=======
+import React from 'react';
+import styles from './Form.module.scss';
+import Input from '../Input/Input';
+import Button from '../Button/Button';
+
+class Form extends React.Component {
+
+    state = {
+
+    }
+    
+    render(){
+        return (
+            <form onSubmit={this.props.submitFn} autoComplete="off">
+            <Input 
+            name="nickname"
+            label="Nickname"
+            maxLenghth={20}
+            />
+
+            <Input 
+            name="email"
+            label="Email"
+            maxLenghth={15}
+            />
+
+            <Input 
+            name="ip"
+            label="Ip address"
+            maxLenghth={30}
+            />
+            <Button>add new item</Button>
+        </form>
+        );
+    }
+} 
+
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
 export default Form;

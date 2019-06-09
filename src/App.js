@@ -4,12 +4,18 @@ import users from '../src/data/data.json';
 import ListWrapper from './components/ListWrapper/ListWrapper';
 import Form from './components/Form/Form';
 import Modal from './components/Modal/Modal';
+<<<<<<< HEAD
 import styles from './App.module.scss';
+=======
+import UserForm from './components/UserForm/UserForm';
+
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
 
 
 class App extends React.Component {
   state = {
     items: [...users],
+<<<<<<< HEAD
     isModalOpen: false,
     messageNick: '',
     messageMail: '',
@@ -56,6 +62,9 @@ class App extends React.Component {
       users: newUsers.length = 0,
       isModalOpen: false,
     })
+=======
+    isModalOpern: false,
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
   }
 
   addItem = (e) => {
@@ -74,6 +83,7 @@ class App extends React.Component {
       })
     }
 
+<<<<<<< HEAD
     else if (e.target[1].value.length < 1){
       this.setState({
         messageMail: 'This field is required'
@@ -127,10 +137,66 @@ class App extends React.Component {
         message: ''
       }), 2000)
     }
+=======
+    //e.target.reset();
+    //e.target[0].value = "elo";
+
+ 
   }
+
+
+    // done.sort((a, b) => b.finishDate - a.finishDate)
+/*
+    if (done.length >= 2) {
+      done.sort((a, b) => {
+        if (a.finishDate < b.finishDate) {
+          return 1
+        }
+        if (a.finishDate > b.finishDate) {
+          return -1
+        }
+        return 0
+      })
+    }
+    if (active.length >= 2) {
+      active.sort((a, b) => {
+  
+        a = a.text.toLowerCase();
+        b = b.text.toLowerCase();
+  
+        if (a < b) return -1;
+        if (a > b) return 1;
+        return 0
+      })
+    }
+  */
+
+  openModal = () => {
+    this.setState({
+      isModalOpen: true,
+    })
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
+  }
+
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false,
+    })
+  }
+
+
+sortByName = (event) => {
+  const users = this.state.items;
+  let newUsers = users.reverse()
+  this.setState({
+    users: newUsers.sort((a,b) => a.date > b.date)
+  })
+}
+
 
   render(){
 
+<<<<<<< HEAD
     const  { 
       isModalOpen, 
       messageNick, 
@@ -144,8 +210,21 @@ class App extends React.Component {
           <h1>
             Crypto users
           </h1>
+=======
+    const  { isModalOpen } = this.state;
+
+    return (
+      <div className="App">
+      <button onClick={this.openModal}>Otworz modal</button>
+        <header className="App-header">
+          <p>
+            User List
+          </p>
+          <UserForm submitFn={this.addItem}/>
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
         </header>
         <section>
+<<<<<<< HEAD
           <Form 
             items={this.state.items} 
             submitFn={this.addItem} 
@@ -164,6 +243,15 @@ class App extends React.Component {
           <div>
             {this.state.message && <h3>{this.state.message}</h3>}
           </div>
+=======
+          <h1>Sort user list by:</h1>
+          <button onClick={this.sortByName}>nickname</button>
+          <button>email</button>
+          <button>date</button>
+
+        </section>
+        <section>
+>>>>>>> ca28ef96dcebe46c821d45f94c32e43c1808984a
           <ListWrapper 
             items={this.state.items}
             delete={this.deleteUser}
@@ -174,6 +262,9 @@ class App extends React.Component {
         </section>
         <section>
           { isModalOpen && <Modal deleteListFn={this.deleteUsers} closeModalFn={this.closeModal} /> }
+        </section>
+        <section>
+          { isModalOpen && <Modal closeModalFn={this.closeModal} /> }
         </section>
       </div>
     );
