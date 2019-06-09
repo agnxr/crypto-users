@@ -1,26 +1,59 @@
 import React from 'react';
 import styles from './ListItem.module.scss';
 import PropTypes from 'prop-types';
-
-const ListItem = ({ 
-    nickname,
-    email,
-    ip
-}) => {
+import ListWrapper from '../ListWrapper';
+import Popup from './Popup/Popup';
 
 
-const defaultDesc = 'This iconic fragrance has stood the test of time, becoming and remaining cult classics in the beauty world. The scent is both inspired and inspiring.';
-
-return (
-    <li className={styles.wrapper}>
-        <div className={styles.item}>
-            <h2>{nickname}</h2>
-            <h3>{email}</h3>
-            <p>{ip}</p>
-        </div>
-    </li>
-)
+class ListItem extends React.Component {
+state = {
+    isPopupOpen: false,
 }
+
+openPopup = () => {
+    this.setState({
+      isPopupOpen: true,
+    })
+  }
+
+  closePopup = () => {
+    this.setState({
+      isPopupOpen: false,
+    })
+  }
+
+elo = (e) => {
+  if (e.target === this.refs.outsideOfModal){
+    this.setState({
+        isPopupOpen: false,
+    });
+  }
+}
+
+
+
+
+
+
+render() {
+    const  { isPopupOpen } = this.state;
+    return (
+        <li className={styles.wrapper}>
+        <div className={styles.item}>
+            <h2>{this.props.nickname}</h2>
+            <h3>{this.props.email}</h3>
+            <p>{this.props.ip}</p>
+            <p>data dodania: {new Date(this.props.date).toLocaleString("pl-PL", { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})}</p>
+        </div>
+                {/*<button onClick={() => this.props.deleteUserFn(this.props.nickname)}>Remove</button>*/}
+                <button onClick={this.openPopup}>Remove</button>
+                
+                { isPopupOpen && <Popup deleteUserFn={this.props.deleteUserFn} nick={this.props.nickname} closePopupFn={this.closePopup}/> }
+    </li>        
+    )
+}
+}
+
 ListItem.propTypes = {
     nickname: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,

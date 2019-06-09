@@ -3,19 +3,23 @@ import ListItem from './ListItem/ListItem';
 import styles from './ListWrapper.module.scss';
 
 
-const ListWrapper = ({items}) => (
+const ListWrapper = (props) => (
     <>
-    {items.length ? (
-    <ul className={styles.wrapper}>
-    {items.map(item => (
-        <ListItem key={item.nickname} {...item} />
-    )) }
-</ul>
-    ) : (
-        <h1>Lista jest pusta</h1>
-    
-    )}
-
+        {props.items.length ? (
+        <ul className={styles.wrapper}>
+            {
+                props.items.map(item => (
+                <ListItem 
+                    deleteUserFn={props.delete} 
+                    key={item.nickname} 
+                    {...item} 
+                />
+                )) 
+            }
+        </ul>
+        ) : (
+            <h1>The list is empty</h1>
+        )}
     </>
 );
 

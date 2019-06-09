@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from './Modal.module.scss';
-import Form from '../Form/Form';
 
-const Modal = ({ closeModalFn }) => (
+
+const Modal = ({ closeModalFn, deleteListFn }) => (
   <div className={styles.wrapper}>
     <button onClick={closeModalFn}>close me</button>
-    <Form />
+    <p>Are you sure you want to delete all users?</p>
+
+    <button onClick={deleteListFn}>Yes</button>
+    <button onClick={closeModalFn}>Cancel</button>
   </div>  
 );
 
