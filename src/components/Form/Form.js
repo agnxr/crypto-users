@@ -103,7 +103,7 @@ class Form extends React.Component {
                     )}
                 </div>
               </div>
-              <div className={formErrors.userName.length > 0 ? styles.error : styles.formItemBar} />
+              <div className={formErrors.email.length > 0 ? styles.error : styles.formItemBar} />
             </div>
 
             <div className={styles.formItem}>
@@ -124,7 +124,7 @@ class Form extends React.Component {
                     )}
                 </div>
               </div>
-              <div className={formErrors.userName.length > 0 ? styles.error : styles.formItemBar} />
+              <div className={formErrors.ip.length > 0 ? styles.error : styles.formItemBar} />
             </div>
             <button 
               type="submit" 
