@@ -26,7 +26,7 @@ const ListWrapper = (props) => (
             }
         </table>
         ) : (
-            <h2 className={styles.info}>The list is empty</h2>
+            <h2 className={styles.info}>The list is empty.</h2>
         )}
     </div>
 );
