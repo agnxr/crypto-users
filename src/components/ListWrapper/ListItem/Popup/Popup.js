@@ -5,7 +5,7 @@ const Popup = ({ closePopupFn, deleteUserFn, nick}) => (
   <div className={styles.wrapper}>
     <button onClick={closePopupFn} className={styles.closeBtn} />
     <div className={styles.popup}>
-      <p>Are you sure you want to delete user <span className={styles.userName}>{nick}</span>?</p>
+      <p className={styles.popupTxt}>Are you sure you want to delete user <span className={styles.userName}>{nick}</span>?</p>
       <div>
         <button onClick={() => deleteUserFn(nick)} className={styles.confirm}>Yes</button>
         <button onClick={closePopupFn} className={styles.cancel}>Cancel</button>
