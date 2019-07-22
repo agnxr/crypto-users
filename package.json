@@ -1,5 +1,5 @@
 {
-  "name": "user-list",
+  "name": "crypto-users",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,7 +19,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "http://agnxr.github.io/user-list",
+  "homepage": "http://agnxr.github.io/crypto-users",
   "eslintConfig": {
     "extends": "react-app"
   },

@@ -19,7 +19,7 @@ A simple React app that adds or remove users from the list.
 
 https://agnxr.github.io/crypto-users
 
-![scr](https://user-images.githubusercontent.com/32043294/61631482-c4e02900-ac8a-11e9-8315-846398c15fb8.png)
+![screencapture-agnxr-github-io-crypto-users-2019-07-22-15_04_11](https://user-images.githubusercontent.com/32043294/61634636-07593400-ac92-11e9-83fe-3a13d5a2b498.png)
 ## 🔨 Technologies 
 
 * React
