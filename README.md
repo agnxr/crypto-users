@@ -1,16 +1,54 @@
-## User List
+# ⚛ Crypto Users
 
 A simple React app that adds or remove users from the list.
 
-Demo: https://agnxr.github.io/user-list/
+## 🕹 Features
 
-1. Users should provide an email, nickname and IP address
-2. Email and IP address validation
-3. A button is disabled if validation does not pass
-4. If user already exists (checked by email or nickname) the operation is blocked 
-5. Each user is removable by corresponding remove button
-6. Removing entire list is possible
-7. Removal requires confirmation
-8. Remove list button is not visible while list is empty
-9. Popups informing why adding a user is not possible
-10. Sorting users list by nickname, email or date
+* Users should provide an email, nickname and IP address
+* Email and IP address validation
+* A button is disabled if validation does not pass
+* If user already exists (checked by email or nickname) the operation is blocked 
+* Each user is removable by corresponding remove button
+* Removing entire list is possible
+* Removal requires confirmation
+* Remove list button is not visible while list is empty
+* Popups informing why adding a user is not possible
+* Sorting users list by nickname, email or date
+
+## 💻 Demo
+
+https://agnxr.github.io/crypto-users
+
+![scr](https://user-images.githubusercontent.com/32043294/61631482-c4e02900-ac8a-11e9-8315-846398c15fb8.png)
+## 🔨 Technologies 
+
+* React
+* SCSS
+
+## 🔧 Installation
+
+Clone repository to your local workspace:
+```bash
+git clone https://github.com/agnxr/crypto-users.git
+```
+
+Install project dependencies using npm or yarn:
+
+```bash
+cd crypto-users
+yarn or npm install
+```
+
+## 🎮 Development
+
+Start developing your own website:
+
+```bash
+yarn or npm start
+```
+
+Open in your browser:
+
+```bash
+http://localhost:3000
+```
