@@ -12,7 +12,7 @@ A simple React app that adds or remove users from the list.
 * Removing entire list is possible
 * Removal requires confirmation
 * Remove list button is not visible while list is empty
-* Popups informing why adding a user is not possible
+* Popups informing why adding the user is not possible
 * Sorting users list by nickname, email or date
 
 ## 💻 Demo
